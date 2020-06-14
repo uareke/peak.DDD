@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Presentation", "1-Presentation", "{0018BD27-752F-460D-A636-52B073D8410F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Application", "2-Application", "{3704CFE9-88E6-48F7-B374-1107F01C5640}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Domain", "3-Domain", "{C40C838D-729D-46C3-8582-728530FB4230}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Infraestructure", "4-Infraestructure", "{1AC99E8C-EC66-4203-8BD9-B2002CA703EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Documentation]", "5-Documentation]", "{294AA1CF-655B-4A17-B720-1F68F39F0DD0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "peak.DDD.Domain", "peak.DDD.Domain\peak.DDD.Domain.csproj", "{1AED210D-DA2A-4711-AEA2-F7857F77F35F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "peak.DDD.Repository", "peak.DDD.Repository\peak.DDD.Repository.csproj", "{6899C054-5C30-47CB-9842-2DF8CDAADA74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "peak.DDD.API", "peak.DDD.API\peak.DDD.API.csproj", "{182D45B4-C0DC-441D-8624-9A59CF58FB3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "peak.DDD.Application", "peak.DDD.Application\peak.DDD.Application.csproj", "{296AEE2B-4F4E-463D-9E18-D6A20ADF883D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AED210D-DA2A-4711-AEA2-F7857F77F35F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AED210D-DA2A-4711-AEA2-F7857F77F35F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AED210D-DA2A-4711-AEA2-F7857F77F35F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AED210D-DA2A-4711-AEA2-F7857F77F35F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6899C054-5C30-47CB-9842-2DF8CDAADA74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6899C054-5C30-47CB-9842-2DF8CDAADA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6899C054-5C30-47CB-9842-2DF8CDAADA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6899C054-5C30-47CB-9842-2DF8CDAADA74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{182D45B4-C0DC-441D-8624-9A59CF58FB3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{182D45B4-C0DC-441D-8624-9A59CF58FB3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{182D45B4-C0DC-441D-8624-9A59CF58FB3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{182D45B4-C0DC-441D-8624-9A59CF58FB3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{296AEE2B-4F4E-463D-9E18-D6A20ADF883D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{296AEE2B-4F4E-463D-9E18-D6A20ADF883D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{296AEE2B-4F4E-463D-9E18-D6A20ADF883D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{296AEE2B-4F4E-463D-9E18-D6A20ADF883D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1AED210D-DA2A-4711-AEA2-F7857F77F35F} = {C40C838D-729D-46C3-8582-728530FB4230}
+		{6899C054-5C30-47CB-9842-2DF8CDAADA74} = {1AC99E8C-EC66-4203-8BD9-B2002CA703EB}
+		{182D45B4-C0DC-441D-8624-9A59CF58FB3E} = {0018BD27-752F-460D-A636-52B073D8410F}
+		{296AEE2B-4F4E-463D-9E18-D6A20ADF883D} = {3704CFE9-88E6-48F7-B374-1107F01C5640}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1190B79A-7645-4FD0-A103-C2405E03F64C}
+	EndGlobalSection
+EndGlobal
