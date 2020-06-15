@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="col-md-12">
+    <div class="row">
+        <p>Para efetuar a pesquisa informe os codigos separados por virgula:<br />
+         Exemplo: 1,2,3,4,5... <br />
+         Sistema efetua a ordem automaticamente e exclui os codigos duplicados.<br />
+        Para pesquisa entre codigos informe: 1-10<br />
+        Sistema vai retornar todas as pessoas entre os codigos.
+        </p>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-4">
+            <input type="text" id="edtPesquisa" class="form-control" />
+        </div>
+        <div class="col-md-2">
+            <button type="button" id="btnPesquisa" class="btn btn-primary">Pesquisar</button>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="row">
+        <div id="Resultado"></div>
+    </div>
+</div>
+        <script>
+            $(document).ready(function () {
+              
+                $(document).on("click", "#btnPesquisa", function () {
+                    var conteudo = "";
+                    $.ajax({
+                        url: "http://localhost:53943/api/pessoas/" + $("#edtPesquisa").val(),
+                        type: "get",
+                        beforeSend: function () {
+                            $("#Resultado").html("Aguarde carregando dados!");
+                        }
+                    }).done(function (data) {
+                        if (data.result) {
+                            console.log(data.dados);
+
+                            JSON.parse(data.dados, (key, value) => {
+                                if (key != "" ) {
+                                    conteudo += "Codigo:" + key + " | Nome: " + value + "<br>";
+                                }
+                                
+                            });
+                            $("#Resultado").html(conteudo);
+                        } else {
+                            $("#Resultado").html(data.errorMessage);
+                        }
+                    }).fail(function (jqXHR, textStatus, msg) {
+                        console.log("Erro ao tentar executar tarefa");
+                    });
+                });
+            });
+
+
+        </script>

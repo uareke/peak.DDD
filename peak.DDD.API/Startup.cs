@@ -17,6 +17,9 @@ namespace peak.DDD.API
 {
     public class Startup
     {
+
+
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,11 +30,19 @@ namespace peak.DDD.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
 
             var connection = Configuration["ConnectionStrings:SqlServerConexao"];
             services.AddDbContext<SistemaContext>(options =>
             options.UseSqlServer(connection, b=>b.MigrationsAssembly("peak.DDD.Repository")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,7 +52,9 @@ namespace peak.DDD.API
             {
                 app.UseDeveloperExceptionPage();
             }
-             app.UseMvc();
+            app.UseMvc();
+
+
         }
     }
 }

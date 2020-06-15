@@ -8,5 +8,6 @@ namespace peak.DDD.Domain.Helpers
     {
         public bool Result { get; set; }
         public string ErrorMessage { get; set; }
+        public string Dados { get; set; }
     }
 }

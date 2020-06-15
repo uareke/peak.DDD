@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewData["Title"] = "CalcPerc";
+}
+
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-4">
+            <label>Parcela</label>
+            <input type="text" id="edtParcela" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <label>Valor</label>
+            <input type="text" id="edtValor" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <label>Resultado</label>
+            <div id="lblRecebeValor">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-2">
+            <button type="button" id="btnCalcular" class="btn btn-primary">Pesquisar</button>
+        </div>
+    </div>
+</div>
+
+<script>
+            $(document).ready(function () {
+
+                $(document).on("click", "#btnCalcular", function () {
+                    var conteudo = "";
+                    var enviaDados = {
+                                    Parcelas: $("#edtParcela").val(),
+                                        Valor: parseFloat($("#edtValor").val())
+                    };
+                    console.log(enviaDados);
+
+
+                    $.ajax({
+                        'url': 'http://localhost:53943/api/Financ',
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: JSON.stringify(enviaDados),
+                        success: function (data) {
+                            $("#lblRecebeValor").html("R$ " +data.dados);
+                            console.log(data);
+                        },
+                        error: function (xhr, textStatus){
+                            console.log(xhr.status);
+                        }
+                   });
+
+                   
+                });
+            });
+
+
+</script>
